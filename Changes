@@ -1,0 +1,31 @@
+Revision history for Net-CIDR-MobileJP
+
+0.0.8  Mon Mar  5 11:26:06 JST 2007
+    suck around docomo's html version up.
+    thanks to Shunichiro Fujiwara.
+
+0.0.7  Thu Dec  7 15:01:11 JST 2006
+    suck around ezweb's html version up.
+    thanks to HIROSE, Masaaki
+
+0.0.6  Mon Nov 20 16:50:53 JST 2006
+    fixed Makefile.PL(thanks to Masayoshi Sekimura)
+
+0.0.5  Thu Nov 16 15:31:55 JST 2006
+    avoid to warnings(thanks to Tatsuhiko Miyagawa)
+
+0.0.4  Thu Nov 16 13:18:41 JST 2006
+    version up the Module::Install.
+    added share/DUMMY file.
+
+0.0.3  Mon Oct 23 21:43:05 JST 2006
+      use Module::Install.
+      use File::ShareDir.
+
+0.0.2  Fri Oct 13 00:09:54 JST 2006
+       Change Author Name.
+       Hatena ID to real name.
+
+0.0.1  Wed Oct 11 19:07:57 2006
+       Initial release.
+
