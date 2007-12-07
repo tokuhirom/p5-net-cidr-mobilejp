@@ -1,7 +1,15 @@
 package Net::CIDR::MobileJP::Scraper;
 use strict;
 use warnings;
-use Module::Pluggable::Fast name => 'plugins', search => [qw/Net::CIDR::MobileJP::Scraper::Plugin/];
+use UNIVERSAL::require;
+use WWW::MobileCarrierJP::DoCoMo::CIDR;
+
+my $short_name_for = +{
+    DoCoMo     => 'I',
+    EZWeb      => 'E',
+    AirHPhone  => 'H',
+    ThirdForce => 'V',
+};
 
 sub new { bless {}, shift }
 
@@ -9,8 +17,11 @@ sub run {
     my ($self, ) = @_;
 
     my $result;
-    for my $plugin ($self->plugins) {
-        $result->{$plugin->carrier} = $plugin->run;
+    for my $carrier (qw/DoCoMo EZWeb AirHPhone ThirdForce/) {
+        my $class = "WWW::MobileCarrierJP::${carrier}::CIDR";
+        $class->use or die $@;
+        my $dat = $class->scrape;
+        $result->{$short_name_for->{$carrier}} = [map { "$_->{ip}$_->{subnetmask}" } @$dat];
     }
     return $result;
 }

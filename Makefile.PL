@@ -15,15 +15,13 @@ sub GenYAML {
 name            'Net-CIDR-MobileJP';
 all_from        'lib/Net/CIDR/MobileJP.pm';
 
-requires 'HTTP::MobileAgent'       => 0;
-requires 'Jcode'                   => 0;
-requires 'LWP::UserAgent'          => 0;
-requires 'Module::Pluggable::Fast' => 0;
-requires 'Net::CIDR::Lite'         => 0;
-requires 'UNIVERSAL::require'      => 0;
-requires 'YAML'                    => 0;
-requires 'version'                 => 0;
-requires 'File::ShareDir'          => 0;
+requires 'HTTP::MobileAgent'    => 0;
+requires 'Net::CIDR::Lite'      => 0;
+requires 'UNIVERSAL::require'   => 0;
+requires 'YAML'                 => 0;
+requires 'version'              => 0;
+requires 'File::ShareDir'       => 0;
+requires 'WWW::MobileCarrierJP' => 0;
 
 install_share;
 

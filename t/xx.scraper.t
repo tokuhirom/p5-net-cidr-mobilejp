@@ -1,19 +1,10 @@
 # -*- mode: cperl; -*-
-use Test::Base;
+use strict;
+use warnings;
+use Test::More tests => 4;
+use Net::CIDR::MobileJP::Scraper;
 
-plan tests => 2 * blocks;
-
-run {
-    my $block = shift;
-    my $scraper = 'Net::CIDR::MobileJP::Scraper::Plugin::' . $block->name;
-    use_ok( $scraper );
-    my $result = $scraper->new->run;
-    cmp_ok(@{ $result }, '>', 6, $block->name)
-        or diag(join("\n", map { "- $_" } @{$result}));
-};
-
-__END__
-=== AirHPhone
-=== DoCoMo
-=== EZweb
-=== Vodafone
+my $result = Net::CIDR::MobileJP::Scraper->new->run;
+for my $carrier (qw/I E V H/) {
+    cmp_ok(scalar(@{ $result->{$carrier} }), '>', 6, $carrier);
+}
