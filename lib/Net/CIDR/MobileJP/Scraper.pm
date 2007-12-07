@@ -8,7 +8,6 @@ my $short_name_for = +{
     DoCoMo     => 'I',
     EZWeb      => 'E',
     AirHPhone  => 'H',
-    SoftBank   => 'S',
     ThirdForce => 'V',
 };
 
@@ -18,7 +17,7 @@ sub run {
     my ($self, ) = @_;
 
     my $result;
-    for my $carrier (qw/DoCoMo EZWeb AirHPhone SoftBank ThirdForce/) {
+    for my $carrier (qw/DoCoMo EZWeb AirHPhone ThirdForce/) {
         my $class = "WWW::MobileCarrierJP::${carrier}::CIDR";
         $class->use or die $@;
         my $dat = $class->scrape;
