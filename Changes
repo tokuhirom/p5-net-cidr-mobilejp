@@ -1,5 +1,9 @@
 Revision history for Net-CIDR-MobileJP
 
+0.0.9  Thu Dec  6 18:21:39 PST 2007
+
+    use WWW::MobileCarrierJP;
+
 0.0.8  Mon Mar  5 11:26:06 JST 2007
     suck around docomo's html version up.
     thanks to Shunichiro Fujiwara.

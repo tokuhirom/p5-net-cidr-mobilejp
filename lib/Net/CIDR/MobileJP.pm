@@ -2,10 +2,10 @@ package Net::CIDR::MobileJP;
 use strict;
 use warnings;
 use Carp;
-use version; our $VERSION = 0.08;
 use YAML;
 use Net::CIDR::Lite;
 use File::ShareDir ();
+our $VERSION = '0.0.9';
 
 sub new {
     my ($class, $stuff) = @_;

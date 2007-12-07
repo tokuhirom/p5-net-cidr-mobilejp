@@ -15,10 +15,8 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Net/CIDR/MobileJP.pm
 lib/Net/CIDR/MobileJP/Scraper.pm
-Makefile
 Makefile.PL
 MANIFEST
-MANIFEST.bak
 MANIFEST.SKIP
 META.yml			# Will be created by "make dist"
 net-cidr-mobilejp-scraper.pl
