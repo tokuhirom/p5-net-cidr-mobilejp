@@ -21,10 +21,10 @@ MANIFEST.SKIP
 META.yml			# Will be created by "make dist"
 net-cidr-mobilejp-scraper.pl
 README
-share/DUMMY
 t/00.load.t
 t/01.base.t
 t/perlcritic.t
 t/pod.t
 t/spelling.t
 t/test.yaml
+share/cidr.yaml

@@ -1,5 +1,8 @@
 Revision history for Net-CIDR-MobileJP
 
+0.10
+    fix a build problem
+
 0.0.9  Thu Dec  6 18:21:39 PST 2007
 
     use WWW::MobileCarrierJP;

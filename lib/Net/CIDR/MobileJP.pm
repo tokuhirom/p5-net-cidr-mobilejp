@@ -5,7 +5,7 @@ use Carp;
 use YAML;
 use Net::CIDR::Lite;
 use File::ShareDir ();
-our $VERSION = '0.0.9';
+our $VERSION = '0.10';
 
 sub new {
     my ($class, $stuff) = @_;
