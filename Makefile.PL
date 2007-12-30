@@ -22,7 +22,6 @@ all_from        'lib/Net/CIDR/MobileJP.pm';
 
 requires 'HTTP::MobileAgent'    => 0;
 requires 'Net::CIDR::Lite'      => 0;
-requires 'UNIVERSAL::require'   => 0;
 requires 'YAML'                 => 0;
 requires 'version'              => 0;
 requires 'File::ShareDir'       => 0;

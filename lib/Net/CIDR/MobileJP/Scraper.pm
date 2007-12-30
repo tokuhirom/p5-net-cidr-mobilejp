@@ -1,8 +1,10 @@
 package Net::CIDR::MobileJP::Scraper;
 use strict;
 use warnings;
-use UNIVERSAL::require;
 use WWW::MobileCarrierJP::DoCoMo::CIDR;
+use WWW::MobileCarrierJP::EZWeb::CIDR;
+use WWW::MobileCarrierJP::AirHPhone::CIDR;
+use WWW::MobileCarrierJP::ThirdForce::CIDR;
 
 my $short_name_for = +{
     DoCoMo     => 'I',
@@ -19,7 +21,6 @@ sub run {
     my $result;
     for my $carrier (qw/DoCoMo EZWeb AirHPhone ThirdForce/) {
         my $class = "WWW::MobileCarrierJP::${carrier}::CIDR";
-        $class->use or die $@;
         my $dat = $class->scrape;
         $result->{$short_name_for->{$carrier}} = [map { "$_->{ip}$_->{subnetmask}" } @$dat];
     }
