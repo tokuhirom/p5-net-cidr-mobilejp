@@ -2,10 +2,15 @@ use strict;
 use warnings;
 use lib qw(lib);
 use inc::Module::Install;
-use YAML;
 use File::Spec;
 
 sub GenYAML {
+    eval "require YAML";
+    if ($@) {
+        print "YAML.pm not found. please run net-cidr-mobilejp-scraper.pl manualy\n";
+        return;
+    }
+
     open(my $fh, '>', File::Spec->catfile('share', 'cidr.yaml')) or die "can't open file";
     require Net::CIDR::MobileJP::Scraper;
     print $fh YAML::Dump(Net::CIDR::MobileJP::Scraper->new->run);
@@ -21,7 +26,8 @@ requires 'UNIVERSAL::require'   => 0;
 requires 'YAML'                 => 0;
 requires 'version'              => 0;
 requires 'File::ShareDir'       => 0;
-requires 'WWW::MobileCarrierJP' => 0;
+
+build_requires 'WWW::MobileCarrierJP' => 0;
 
 install_share;
 
