@@ -1,5 +1,11 @@
 Revision history for Net-CIDR-MobileJP
 
+0.11
+
+    - updated cidr.yaml
+    - use latest vesion of WWW::MobileCarrierJP.
+    - fixed typo
+
 0.10
     fix a build problem
 
