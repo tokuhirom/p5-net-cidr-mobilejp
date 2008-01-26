@@ -26,7 +26,7 @@ requires 'YAML'                 => 0;
 requires 'version'              => 0;
 requires 'File::ShareDir'       => 0;
 
-build_requires 'WWW::MobileCarrierJP' => 0;
+build_requires 'WWW::MobileCarrierJP' => 0.11;
 
 install_share;
 
