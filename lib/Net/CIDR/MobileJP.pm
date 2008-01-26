@@ -106,7 +106,7 @@ Carrier name is compatible with L<HTTP::MobileAgent>.
 
 L<http://d.hatena.ne.jp/spiritloose/20061010/1160471510>
 
-=head1 LICENCE AND COPYRIGHT
+=head1 LICENSE AND COPYRIGHT
 
 Copyright (c) 2006, Tokuhiro Matsuno C<< <tokuhiro __at__ mobilefactory.jp> >>. All rights reserved.
 
