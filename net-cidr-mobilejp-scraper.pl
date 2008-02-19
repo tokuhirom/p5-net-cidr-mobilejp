@@ -1,27 +1,45 @@
 #!/usr/bin/perl -w
 use strict;
 use warnings;
-use Getopt::Long;
-use UNIVERSAL::require;
-use Pod::Usage;
+
 use YAML;
 
-my $module = 'Net::CIDR::MobileJP::Scraper';
-GetOptions(
-    'module=s'     => \$module,
-) or pod2usage(2);
-$module->use or die $@;
+use WWW::MobileCarrierJP::DoCoMo::CIDR;
+use WWW::MobileCarrierJP::EZWeb::CIDR;
+use WWW::MobileCarrierJP::AirHPhone::CIDR;
+use WWW::MobileCarrierJP::ThirdForce::CIDR;
 
-print YAML::Dump($module->new->run);
+&main;exit;
+
+sub short_name_for {
+    my $carrier = shift;
+    +{
+        DoCoMo     => 'I',
+        EZWeb      => 'E',
+        AirHPhone  => 'H',
+        ThirdForce => 'V',
+    }->{$carrier};
+}
+
+sub scrape {
+    my $result;
+    for my $carrier (qw/DoCoMo EZWeb AirHPhone ThirdForce/) {
+        my $class = "WWW::MobileCarrierJP::${carrier}::CIDR";
+        my $dat = $class->scrape;
+        $result->{short_name_for($carrier)} = [map { "$_->{ip}$_->{subnetmask}" } @$dat];
+    }
+    return $result;
+}
+
+sub main {
+    print YAML::Dump(scrape());
+}
 
 __END__
 
 =head1 SYNOPSIS
 
     $ net-cidr-mobilejp-scraper.pl
-
-    Options:
-        --module=Net::CIDR::MobileJP::Scraper::Plugin::EZweb
 
 =head2 DESCRIPTION
 
