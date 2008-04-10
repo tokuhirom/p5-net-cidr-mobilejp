@@ -26,3 +26,4 @@ t/perlcritic.t
 t/pod.t
 t/spelling.t
 t/test.yaml
+share/cidr.yaml

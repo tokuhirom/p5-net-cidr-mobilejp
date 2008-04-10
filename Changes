@@ -1,5 +1,9 @@
 Revision history for Net-CIDR-MobileJP
 
+0.12
+
+    - remove Net::CIDR::MobileJP::Scraper.
+
 0.11
 
     - updated cidr.yaml

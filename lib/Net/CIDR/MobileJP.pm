@@ -5,7 +5,7 @@ use Carp;
 use YAML;
 use Net::CIDR::Lite;
 use File::ShareDir ();
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 sub new {
     my ($class, $stuff) = @_;
@@ -106,10 +106,10 @@ Carrier name is compatible with L<HTTP::MobileAgent>.
 
 L<http://d.hatena.ne.jp/spiritloose/20061010/1160471510>
 
-=head1 LICENSE AND COPYRIGHT
+=head1 COPYRIGHT
 
-Copyright (c) 2006, Tokuhiro Matsuno C<< <tokuhiro __at__ mobilefactory.jp> >>. All rights reserved.
+This program is free software; you can redistribute
+it and/or modify it under the same terms as Perl itself.
 
-This module is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself. See L<perlartistic>.
-
+The full text of the license can be found in the
+LICENSE file included with this module.
