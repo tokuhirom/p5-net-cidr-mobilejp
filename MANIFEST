@@ -14,7 +14,6 @@ inc/Module/Install/Share.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Net/CIDR/MobileJP.pm
-lib/Net/CIDR/MobileJP/Scraper.pm
 Makefile.PL
 MANIFEST
 MANIFEST.SKIP
