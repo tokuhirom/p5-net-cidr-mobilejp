@@ -15,9 +15,9 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 lib/Net/CIDR/MobileJP.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
 MANIFEST.SKIP
-META.yml			# Will be created by "make dist"
+META.yml
 net-cidr-mobilejp-scraper.pl
 README
 t/00.load.t
@@ -26,4 +26,3 @@ t/perlcritic.t
 t/pod.t
 t/spelling.t
 t/test.yaml
-share/cidr.yaml
