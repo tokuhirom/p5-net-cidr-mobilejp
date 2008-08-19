@@ -2,10 +2,22 @@ package Net::CIDR::MobileJP;
 use strict;
 use warnings;
 use Carp;
-use YAML;
 use Net::CIDR::Lite;
 use File::ShareDir ();
 our $VERSION = '0.13';
+
+our $yaml_loader;
+BEGIN {
+    $yaml_loader = sub {
+        ## no critic
+        if (eval "use YAML::Syck; 1;") {
+            \&YAML::Syck::LoadFile;
+        } else {
+            require YAML;
+            \&YAML::LoadFile;
+        }
+    }->();
+};
 
 sub new {
     my ($class, $stuff) = @_;
@@ -35,13 +47,13 @@ sub _load_config {
     my $data;
     if (defined $stuff && -f $stuff && -r _) {
         # load yaml from file
-        $data = YAML::LoadFile($stuff);
+        $data = $yaml_loader->($stuff);
     } elsif ($stuff) {
         # raw data
         $data = $stuff;
     } else {
         # generated file
-        $data = YAML::LoadFile(File::ShareDir::module_file('Net::CIDR::MobileJP', 'cidr.yaml'));
+        $data = $yaml_loader->(File::ShareDir::module_file('Net::CIDR::MobileJP', 'cidr.yaml'));
     }
     return $data;
 }
