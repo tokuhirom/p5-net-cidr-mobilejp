@@ -22,7 +22,11 @@ README
 share/DUMMY
 t/00.load.t
 t/01.base.t
+t/02.yaml-pp.t
+t/03.yaml-syck.t
 t/test.yaml
+t/testlib/YAML/Syck.pm
+t/Utils.pm
 xt/perlcritic.t
 xt/pod.t
 xt/spelling.t
