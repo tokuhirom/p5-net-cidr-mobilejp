@@ -7,7 +7,7 @@ use File::Spec;
 name            'Net-CIDR-MobileJP';
 all_from        'lib/Net/CIDR/MobileJP.pm';
 
-requires 'Net::CIDR::Lite'      => 0.22;
+requires 'Net::CIDR::Lite'      => 0.20;
 requires 'YAML'                 => 0;
 requires 'version'              => 0;
 requires 'File::ShareDir'       => 1.00;
