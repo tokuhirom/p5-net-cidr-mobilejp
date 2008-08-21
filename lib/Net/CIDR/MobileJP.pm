@@ -22,21 +22,21 @@ BEGIN {
 sub new {
     my ($class, $stuff) = @_;
 
-    return bless {spanner => $class->_create_spanner($stuff)}, $class;
+    return bless {spanner => $class->_create_spanner($class->_load_config($stuff))}, $class;
 }
 
 sub _create_spanner {
-    my ($class, $stuff) = @_;
+    my ($class, $conf) = @_;
 
-    my @cidrs;
-    my %cidr_for = %{$class->_load_config($stuff)};
-    my $spanner = Net::CIDR::Lite->new->spanner;
-    while (my ($carrier, $ip_ranges) = each %cidr_for) {
-        my $cidr = Net::CIDR::Lite->new;
-        for my $ip_range (@$ip_ranges) {
-            $cidr->add($ip_range);
-        }
-        $spanner->add($cidr, $carrier);
+    my $spanner = Net::CIDR::Lite::Span->new;
+    while (my ($carrier, $ip_ranges) = each %$conf) {
+        $spanner->add(do {
+            my $cidr = Net::CIDR::Lite->new;
+            for my $ip_range (@$ip_ranges) {
+                $cidr->add($ip_range);
+            }
+            $cidr;
+        }, $carrier);
     }
     return $spanner;
 }
