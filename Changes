@@ -1,5 +1,9 @@
 Revision history for Net-CIDR-MobileJP
 
+0.16
+
+    - fixed tests bug
+
 0.15
 
     - depend to WWW::MobileCarrierJP 0.19

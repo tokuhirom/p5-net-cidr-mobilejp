@@ -5,7 +5,7 @@ use 5.00800;
 use Carp;
 use Net::CIDR::Lite;
 use File::ShareDir ();
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
 our $yaml_loader;
 BEGIN {
