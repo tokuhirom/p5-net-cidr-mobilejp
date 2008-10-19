@@ -14,7 +14,7 @@ requires 'File::ShareDir'       => 1.00;
 build_requires 'WWW::MobileCarrierJP' => '0.19';
 
 install_share;
-author_tests 'xt';
+author_tests('xt');
 
 my $cwd = Cwd::cwd;
 auto_install_now;
