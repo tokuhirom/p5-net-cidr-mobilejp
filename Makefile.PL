@@ -11,7 +11,7 @@ requires 'Net::CIDR::Lite'      => 0.20;
 requires 'YAML'                 => 0;
 requires 'File::ShareDir'       => 1.00;
 
-build_requires 'WWW::MobileCarrierJP' => '0.19';
+build_requires 'WWW::MobileCarrierJP' => '0.23';
 
 install_share;
 author_tests('xt');
