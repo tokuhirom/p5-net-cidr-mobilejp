@@ -29,6 +29,7 @@ if ($@) {
 install_share;
 author_tests('xt');
 
+readme_markdown_from 'lib/Net/CIDR/MobileJP.pm';
 auto_set_repository;
 WriteAll;
 
