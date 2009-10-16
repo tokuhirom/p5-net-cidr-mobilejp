@@ -18,3 +18,4 @@ share/cidr.yaml
 \.svn/
 ^[^/]+\.yaml$
 ^\.shipit$
+\.git/

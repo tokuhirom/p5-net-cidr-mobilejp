@@ -1,5 +1,10 @@
 Revision history for Net-CIDR-MobileJP
 
+0.17
+
+    - use dist_file
+    - generate cidr.yaml automatically
+
 0.16
 
     - fixed tests bug
