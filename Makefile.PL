@@ -11,8 +11,6 @@ configure_requires 'File::ShareDir'       => 1.00;
 
 eval {
     print "generating cidr.yaml\n";
-    require File::ShareDir;
-    my $distdir = File::ShareDir::dist_dir('Net-CIDR-MobileJP');
     my $x = `$^X net-cidr-mobilejp-scraper.pl`;
     open my $fh, '>', 'share/cidr.yaml' or die $!;
     print $fh $x;
