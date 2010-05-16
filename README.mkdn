@@ -30,7 +30,7 @@ The argument is 'path to yaml' or 'raw data'.
 
 Get the career name from IP address.
 
-Carrier name is compatible with [HTTP::MobileAgent](http://search.cpan.org/search?mode=module&query=HTTP::MobileAgent).
+Carrier name is compatible with [HTTP::MobileAgent](http://search.cpan.org/perldoc?HTTP::MobileAgent).
 
 # AUTHORS
 
