@@ -1,5 +1,9 @@
 Revision history for Net-CIDR-MobileJP
 
+0.19
+
+    - fixed Makefile.PL for installing cidr.yaml
+
 0.18
 
     - depend to File::ShareDir 1.02
