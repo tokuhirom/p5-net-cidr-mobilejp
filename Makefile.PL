@@ -16,6 +16,13 @@ eval {
     print $fh $x;
     close $fh;
     print "success: cidr.yaml\n";
+    postamble(<<'...');
+config ::
+	$(NOECHO) $(MKPATH) "$(INST_LIB)/auto/share/dist/$(DISTNAME)/."
+	$(NOECHO) $(CHMOD) $(PERM_DIR) "$(INST_LIB)/auto/share/dist/$(DISTNAME)/."
+	$(NOECHO) $(CP) "share/cidr.yaml" "$(INST_LIB)/auto/share/dist/$(DISTNAME)/cidr.yaml"
+...
+
 };
 if ($@) {
     print "failed to generate cidr.yaml: $@\n";
@@ -24,7 +31,6 @@ if ($@) {
 # this is just a optional thing.
 # build_requires 'WWW::MobileCarrierJP' => '0.23';
 
-install_share;
 author_tests('xt');
 
 readme_markdown_from 'lib/Net/CIDR/MobileJP.pm';
