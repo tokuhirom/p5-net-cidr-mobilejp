@@ -16,12 +16,6 @@ eval {
     print $fh $x;
     close $fh;
     print "success: cidr.yaml\n";
-    postamble(<<'...');
-config ::
-	$(NOECHO) $(MKPATH) "$(INST_LIB)/auto/share/dist/$(DISTNAME)/."
-	$(NOECHO) $(CHMOD) $(PERM_DIR) "$(INST_LIB)/auto/share/dist/$(DISTNAME)/."
-	$(NOECHO) $(CP) "share/cidr.yaml" "$(INST_LIB)/auto/share/dist/$(DISTNAME)/cidr.yaml"
-...
 
 };
 if ($@) {
@@ -33,6 +27,7 @@ if ($@) {
 
 author_tests('xt');
 
+install_share();
 readme_markdown_from 'lib/Net/CIDR/MobileJP.pm';
 auto_set_repository();
 WriteAll;

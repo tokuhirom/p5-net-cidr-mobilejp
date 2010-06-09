@@ -1,5 +1,4 @@
 t/xx.*\.t
-share/cidr.yaml
 \bRCS\b
 \bCVS\b
 ^MANIFEST\.
