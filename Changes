@@ -1,5 +1,10 @@
 Revision history for Net-CIDR-MobileJP
 
+0.21
+
+    - regen cidr.yaml
+    - depend to latest WWW::MobileCarrierJP
+
 0.20
 
     - adde default cidr.yaml for failing issue...
