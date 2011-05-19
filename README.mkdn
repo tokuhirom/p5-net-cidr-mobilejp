@@ -45,7 +45,7 @@ Carrier name is compatible with [HTTP::MobileAgent](http://search.cpan.org/perld
 
 # SEE ALSO
 
-<http://d.hatena.ne.jp/spiritloose/20061010/1160471510>
+[http://d.hatena.ne.jp/spiritloose/20061010/1160471510](http://d.hatena.ne.jp/spiritloose/20061010/1160471510)
 
 # COPYRIGHT
 

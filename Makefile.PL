@@ -3,10 +3,10 @@ use inc::Module::Install;
 name            'Net-CIDR-MobileJP';
 all_from        'lib/Net/CIDR/MobileJP.pm';
 
-requires 'Net::CIDR::Lite'      => 0.20;
+requires 'Net::CIDR::Lite'      => 0.21;
 requires 'YAML'                 => 0;
 requires 'File::ShareDir'       => 1.02;
-requires 'WWW::MobileCarrierJP' => 0.37;
+requires 'WWW::MobileCarrierJP' => 0.54;
 configure_requires 'File::ShareDir'       => 1.00;
 
 eval {

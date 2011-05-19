@@ -4,7 +4,7 @@ use warnings;
 
 use YAML;
 
-use WWW::MobileCarrierJP 0.19;
+use WWW::MobileCarrierJP 0.54;
 use WWW::MobileCarrierJP::DoCoMo::CIDR;
 use WWW::MobileCarrierJP::EZWeb::CIDR;
 use WWW::MobileCarrierJP::AirHPhone::CIDR;
@@ -19,7 +19,7 @@ sub short_name_for {
         EZWeb      => 'E',
         AirHPhone  => 'H',
         ThirdForce => 'V',
-    }->{$carrier};
+    }->{$carrier} || die "Unknown carrier: $carrier";
 }
 
 sub scrape {
