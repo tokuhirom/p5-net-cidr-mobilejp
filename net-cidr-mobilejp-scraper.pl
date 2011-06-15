@@ -4,7 +4,7 @@ use warnings;
 
 use YAML;
 
-use WWW::MobileCarrierJP 0.54;
+use WWW::MobileCarrierJP 0.55;
 use WWW::MobileCarrierJP::DoCoMo::CIDR;
 use WWW::MobileCarrierJP::EZWeb::CIDR;
 use WWW::MobileCarrierJP::AirHPhone::CIDR;
