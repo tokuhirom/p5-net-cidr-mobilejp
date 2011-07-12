@@ -1,5 +1,10 @@
 Revision history for Net-CIDR-MobileJP
 
+0.24
+
+    - fixed releng issue
+    - regen cidr.yaml
+
 0.23
 
     - regen cidr.yaml
