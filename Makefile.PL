@@ -11,11 +11,14 @@ configure_requires 'File::ShareDir'       => 1.00;
 
 eval {
     print "generating cidr.yaml\n";
-    my $x = `$^X net-cidr-mobilejp-scraper.pl`;
-    open my $fh, '>', 'share/cidr.yaml' or die $!;
-    print $fh $x;
-    close $fh;
-    print "success: cidr.yaml\n";
+    if (my $x = `$^X net-cidr-mobilejp-scraper.pl`) {
+		open my $fh, '>', 'share/cidr.yaml' or die $!;
+		print $fh $x;
+		close $fh;
+		print "success: cidr.yaml\n";
+	} else {
+		print "failed to generate cidr.yaml\n";
+	}
 
 };
 if ($@) {
